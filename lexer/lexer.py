@@ -82,11 +82,15 @@ class Lexer:
                 if len(palavra) > 16:
                     palavra = palavra[:16]
 
-                if palavra.upper() in RESERVADAS:
+                if palavra.upper() in ["AND", "OR"]:
+                    tokens.append(
+                        Token("OPLOG", palavra.upper(), self.linha, coluna_inicio)
+                    )
+                elif palavra.upper() in RESERVADAS:
+
                     tokens.append(
                         Token(palavra.upper(), palavra, self.linha, coluna_inicio)
                     )
-
                 else:
                     tokens.append(
                         Token("IDENTIFIER", palavra, self.linha, coluna_inicio)
