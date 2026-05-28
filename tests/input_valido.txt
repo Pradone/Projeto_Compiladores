@@ -1,0 +1,9 @@
+/PROGRAM teste;
+
+x := 10;
+y <= 20;
+z <> 30;/
+
+WRITE("Olá mundo");
+
+/variavelgigante123456 := -9999;/
