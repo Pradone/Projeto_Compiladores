@@ -11,6 +11,9 @@ RESERVADAS = {
     "FALSE",
     "TRUE",
     "WRITE",
+    "IF",
+    "THEN",
+    "ELSE",
 }
 
 OPERADORES_SIMPLES = {

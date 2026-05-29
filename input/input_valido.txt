@@ -1,0 +1,33 @@
+PROGRAM teste;
+
+VAR
+x : INTEGER;
+y : INTEGER;
+ok : BOOLEAN;
+
+BEGIN
+    x := 10;
+    y := x + 20 * 2;
+    ok := x < y AND TRUE;
+
+    WRITE("Valor de y:");
+    WRITE(y);
+
+    READ(x);
+
+    WHILE x < y DO
+    BEGIN
+        x := x + 1;
+        WRITE(x);
+    END
+
+    IF ok THEN
+    BEGIN
+        WRITE("ok verdadeiro");
+    END
+    ELSE
+    BEGIN
+        WRITE("ok falso");
+    END
+
+END.

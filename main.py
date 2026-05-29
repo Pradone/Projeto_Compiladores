@@ -1,7 +1,7 @@
 from lexer import Lexer
 from parser import Parser
 
-arquivo = open("tests/input_valido.txt", "r", encoding="utf-8")
+arquivo = open("input/input_valido.txt", "r", encoding="utf-8")
 codigo = arquivo.read()
 
 lexer = Lexer(codigo)
