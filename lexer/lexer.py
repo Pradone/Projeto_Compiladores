@@ -32,14 +32,17 @@ class Lexer:
 
             # COMENTARIOS
             if atual == "/":
-
                 proxima_barra = self.codigo.find("/", self.pos + 1)
 
                 if proxima_barra != -1:
-
                     while self.pos <= proxima_barra:
-                        self.avancar()
-
+                        
+                        if self.codigo[self.pos] == "\n":
+                            self.linha += 1
+                            self.coluna = 1
+                            self.pos += 1
+                        else:
+                            self.avancar()
                     continue
 
             # STRINGS
