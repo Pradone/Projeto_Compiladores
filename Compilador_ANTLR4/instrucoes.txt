@@ -1,0 +1,7 @@
+pip install antlr4-tools
+
+cd Compilador_ANTLR4
+
+antlr4 -Dlanguage=Python3 linguagem.g4
+ou
+java -jar antlr-4.13.2-complete.jar -Dlanguage=Python3 linguagem.g4
