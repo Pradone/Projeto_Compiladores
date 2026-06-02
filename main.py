@@ -1,7 +1,7 @@
 from antlr4 import *
 
-from gramaticaLexer import gramaticaLexer
-from gramaticaParser import gramaticaParser
+from antlr.gramaticaLexer import gramaticaLexer
+from antlr.gramaticaParser import gramaticaParser
 
 # Altere para False para testar um programa inválido
 validacao = True
