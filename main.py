@@ -1,15 +1,26 @@
-from lexer import Lexer
-from parser import Parser
+from antlr4 import *
 
-arquivo = open("input/input_valido.txt", "r", encoding="utf-8")
-codigo = arquivo.read()
+from gramaticaLexer import gramaticaLexer
+from gramaticaParser import gramaticaParser
 
-lexer = Lexer(codigo)
-tokens = lexer.tokenize()
+# Altere para False para testar um programa inválido
+validacao = True
+#validacao = False
 
-for token in tokens:
-    print(token)
-    
-print('')
-parser = Parser(tokens)
-parser.parse()
+arquivo = "input/input_valido.txt" if validacao else "input/input_invalido.txt"
+
+entrada = FileStream(arquivo, encoding="utf-8")
+
+lexer = gramaticaLexer(entrada)
+tokens = CommonTokenStream(lexer)
+
+parser = gramaticaParser(tokens)
+
+parser.prog()
+
+if parser.getNumberOfSyntaxErrors() == 0:
+    print(f"\nArquivo analisado: {arquivo}")
+    print("Programa válido!")
+else:
+    print(f"\nArquivo analisado: {arquivo}")
+    print("Programa inválido!")
