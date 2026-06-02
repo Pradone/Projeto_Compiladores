@@ -3,7 +3,7 @@ from antlr4 import *
 if "." in __name__:
     from .gramaticaParser import gramaticaParser
 else:
-    from antlr.gramaticaParser import gramaticaParser
+    from gramaticaParser import gramaticaParser
 
 # This class defines a complete listener for a parse tree produced by gramaticaParser.
 class gramaticaListener(ParseTreeListener):

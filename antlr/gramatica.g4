@@ -140,6 +140,11 @@ ATRIB   : ':=';
 
 CTE
     : [+-]? [0-9]+
+      {
+          valor = int(self.text)
+          if valor < -32768 or valor > 32767:
+              raise Exception("Erro léxico: constante inteira fora do limite de 2 bytes: " + self.text)
+      }
     ;
 
 CADEIA
@@ -148,6 +153,10 @@ CADEIA
 
 IDENTIFIER
     : [a-zA-Z] [a-zA-Z0-9]*
+      {
+          if len(self.text) > 16:
+              self.text = self.text[:16]
+      }
     ;
 
 COMENTARIO
