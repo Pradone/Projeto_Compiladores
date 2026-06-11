@@ -1,7 +1,10 @@
-PROGRAM teste
+PROGRAM teste;
 
 VAR
-x : INTEGER;
+s : STRING;
 
 BEGIN
+
+s := "abc";
+
 END.

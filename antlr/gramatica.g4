@@ -24,6 +24,7 @@ listId
 tip
     : INTEGER
     | BOOLEAN
+    | STRING
     ;
 
 cmdComp
@@ -82,6 +83,7 @@ termo
 fator
     : IDENTIFIER
     | CTE
+    | CADEIA
     | TRUE
     | FALSE
     | OPNEG fator
@@ -91,6 +93,7 @@ fator
 PROGRAM : [Pp][Rr][Oo][Gg][Rr][Aa][Mm];
 INTEGER : [Ii][Nn][Tt][Ee][Gg][Ee][Rr];
 BOOLEAN : [Bb][Oo][Oo][Ll][Ee][Aa][Nn];
+STRING  : [Ss][Tt][Rr][Ii][Nn][Gg];
 BEGIN   : [Bb][Ee][Gg][Ii][Nn];
 END     : [Ee][Nn][Dd];
 WHILE   : [Ww][Hh][Ii][Ll][Ee];
