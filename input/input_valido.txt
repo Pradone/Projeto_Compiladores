@@ -1,21 +1,57 @@
-PROGRAM teste;
+PROGRAM testeCompleto;
 
 VAR
 x : INTEGER;
 y : INTEGER;
+z : INTEGER;
+a : BOOLEAN;
+b : BOOLEAN;
+ok : BOOLEAN;
+msg : STRING;
 
 BEGIN
 
-x := 10;
-y := 20;
+    x := 10;
+    y := 20;
+    z := (x + y) * 2;
 
-IF x < y THEN
-BEGIN
-    WRITE(x);
-END
-ELSE
-BEGIN
-    WRITE(y);
-END
+    a := TRUE;
+    b := FALSE;
+    ok := (x < y) AND a;
+
+    msg := "Compilador funcionando";
+
+    WRITE(msg);
+    WRITE(z);
+
+    IF ok THEN
+    BEGIN
+        z := z + 5;
+        WRITE("IF verdadeiro");
+        WRITE(z);
+    END
+    ELSE
+    BEGIN
+        z := z - 5;
+        WRITE("IF falso");
+        WRITE(z);
+    END
+
+    WHILE x < y DO
+    BEGIN
+        x := x + 1;
+        WRITE(x);
+    END
+
+    ok := ~(b OR FALSE);
+
+    IF ok THEN
+    BEGIN
+        WRITE("Negacao funcionando");
+    END
+    ELSE
+    BEGIN
+        WRITE("Erro na negacao");
+    END
 
 END.

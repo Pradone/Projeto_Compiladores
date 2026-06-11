@@ -1,10 +1,13 @@
-PROGRAM teste;
+PROGRAM testeInvalido;
 
 VAR
-s : STRING;
+x : INTEGER;
+ok : BOOLEAN;
 
 BEGIN
 
-s := "abc";
+    x := 10;
+
+    ok := x + TRUE;
 
 END.

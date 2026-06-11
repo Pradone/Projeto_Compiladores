@@ -1,9 +1,42 @@
 x = 10
 y = 20
-t_0 = x < y
-IF_FALSE t_0 GOTO L_0
-WRITE x
+t_0 = x + y
+t_1 = t_0 * 2
+z = t_1
+a = TRUE
+b = FALSE
+t_2 = x < y
+t_3 = t_2 AND a
+ok = t_3
+msg = "Compilador funcionando"
+WRITE msg
+WRITE z
+IF_FALSE ok GOTO L_0
+t_4 = z + 5
+z = t_4
+WRITE "IF verdadeiro"
+WRITE z
 GOTO L_1
 L_0:
-WRITE y
+t_5 = z - 5
+z = t_5
+WRITE "IF falso"
+WRITE z
 L_1:
+L_2:
+t_6 = x < y
+IF_FALSE t_6 GOTO L_3
+t_7 = x + 1
+x = t_7
+WRITE x
+GOTO L_2
+L_3:
+t_8 = b OR FALSE
+t_9 = ~ t_8
+ok = t_9
+IF_FALSE ok GOTO L_4
+WRITE "Negacao funcionando"
+GOTO L_5
+L_4:
+WRITE "Erro na negacao"
+L_5:
